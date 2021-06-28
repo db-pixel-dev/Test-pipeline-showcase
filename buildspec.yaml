@@ -11,7 +11,6 @@ phases:
   pre_build:
     commands:
       - echo Installing dependencies...
-      - npm config set //registry.dbpixelhouse.com/:_authToken=pC4BshDu+z0r0d1kUonBdA==
       - yarn
   build:
     commands:
