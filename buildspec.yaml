@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing latest Node ...
+      - sudo yum install -y gcc-c++ make 
+      - curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash - 
+      - echo Installing Yarn...
+      - npm install yarn -g
+  pre_build:
+    commands:
+      - echo Installing dependencies...
+      - yarn
+  build:
+    commands:
+      - echo Building...
+      - yarn build
+artifacts:
+  files:
+    - "**/*"
+  discard-paths: no
+  base-directory: dist
