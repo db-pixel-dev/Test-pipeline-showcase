@@ -8,11 +8,9 @@ phases:
       - node -e "console.log('Running Node.js ' + process.version)"
       - echo Installing Yarn...
       - npm install yarn -g
-      - npm install npm-cli-login -g
   pre_build:
     commands:
       - echo Installing dependencies...
-      - npm-cli-login login -u jtubman -p rraOO98X -e james.tubman@dbpixelhouse.com -r https://registry.dbpixelhouse.com
       - yarn
   build:
     commands:
@@ -23,3 +21,4 @@ artifacts:
     - "**/*"
   discard-paths: no
   base-directory: dist
+  
