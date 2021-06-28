@@ -1,5 +1,5 @@
 import React from "react";
 
-const App = () => <div> DB React JS Template </div>
+const App = () => <div> This is a test to see if development pushes</div>
 
 export default App;
