@@ -4,8 +4,8 @@ phases:
   install:
     commands:
       - echo Installing latest Node ...
-      - sudo yum install -y gcc-c++ make 
-      - curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash - 
+      - yum install -y gcc-c++ make 
+      - curl -sL https://rpm.nodesource.com/setup_16.x |  -E bash - 
       - echo Installing Yarn...
       - npm install yarn -g
   pre_build:
