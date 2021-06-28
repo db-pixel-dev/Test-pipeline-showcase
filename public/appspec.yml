@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files:
+  - source: / # This line assumes that your deployment code is located in
+    destination: /home/ec2-user/client/public/main/
+permissions:
+  # sets ec2-user as the owner:group for the application deployment directory
+  - object:  /home/ec2-user/client/public/main/
+    owner: ec2-user
+    mode: 777
+    type:
+      - directory
+hooks:
+  # All hook scripts are assumed to be in the /install/aws_cd directory located at the root of the deployment zip archive
+  BeforeInstall:
+    - location: scripts/before_install.sh
+      timeout: 300
+      runas: ec2-user
+  AfterInstall:
+    - location: scripts/after_install.sh
+      timeout: 300
+      runas: ec2-user
