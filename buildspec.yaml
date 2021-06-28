@@ -11,6 +11,7 @@ phases:
   pre_build:
     commands:
       - echo Installing dependencies...
+       - echo "//registry.dbpixelhouse.com/:_authToken=pC4BshDu+z0r0d1kUonBdA==" > .npmrc
       - yarn
   build:
     commands:
