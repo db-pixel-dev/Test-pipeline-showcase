@@ -8,6 +8,8 @@ phases:
       - node -e "console.log('Running Node.js ' + process.version)"
       - echo Installing Yarn...
       - npm install yarn -g
+      - npm config set @gravit8-software:registry=https://npm.pkg.github.com
+      - npm config set //npm.pkg.github.com/:_authToken=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
   pre_build:
     commands:
       - echo Installing dependencies...
