@@ -1,5 +1,7 @@
 version: 0.2
-
+env:
+  secrets-manager:
+    GITHUB_SECRET: "GithubToken:OAuthToken"
 phases:
   install:
     runtime-versions:
@@ -9,7 +11,7 @@ phases:
       - echo Installing Yarn...
       - npm install yarn -g
       - npm config set @gravit8-software:registry=https://npm.pkg.github.com
-      - npm config set //npm.pkg.github.com/:_authToken={{resolve:secretsmanager:GitHubToken:SecretString:OAuthToken}}
+      - npm config set //npm.pkg.github.com/:_authToken={{GITHUB_SECRET}}
   pre_build:
     commands:
       - echo Installing dependencies...
